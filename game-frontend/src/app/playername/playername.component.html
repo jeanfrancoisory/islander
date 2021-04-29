@@ -1,0 +1,32 @@
+<div class="edition">
+  <form (ngSubmit)="onChangeName(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="name">
+        Nom du Joueur
+      </label>
+      <input type="text" id="name" class="form-control" name="name" ngModel required>
+    </div>
+    <p>
+      <button class="favorite styled"
+              type="submit"
+              [disabled]="f.invalid">
+        Changer de nom
+      </button>
+    </p>
+  </form>
+  <br><br>
+  <button class="favorite styled"
+          type="button" (click)="onUndo()">
+    Undo
+  </button>
+  <button class="favorite styled"
+          type="button" (click)="onRedo()">
+    Redo
+  </button>
+</div>
+<div class="quit">
+  <button class="favorite styled"
+          type="button" (click)="onQuit()">
+    Quitter
+  </button>
+</div>

@@ -1,0 +1,12 @@
+<p>Fin de la partie</p>
+<p>Joueur : {{this.gameService.game.player.name}}</p>
+<p>Score : {{this.gameService.game.score}}</p>
+<button class="favorite styled"
+        type="button" (click)="onClickedSave()">
+  Sauvegarder mon score
+</button>
+<br><br>
+<button class="favorite styled"
+        type="button" (click)="onClickedReplay()">
+  Rejouer
+</button>

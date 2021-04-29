@@ -1,0 +1,49 @@
+
+<div class="map">
+  <ng-container *ngFor="let y of [0,1,2,3,4,5,6,7,8,9]">
+    <ng-container *ngFor="let x of [0,1,2,3,4,5,6,7,8,9]">
+      <img *ngIf="isGrass(x,y)" class='tile' src='assets/empty.svg' (click)="onGrassCick(x,y)"
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isTree(x,y)" class='tile' src='assets/tree.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isWater(x,y)" class='tile' src='assets/water.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isCircus(x,y)" class='tile' src='assets/circus.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isFountain(x,y)" class='tile' src='assets/fountain.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isHouse(x,y)" class='tile' src='assets/house.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+      <img *ngIf="isWindTurbine(x,y)" class='tile' src='assets/wind-turbine.svg'
+           [attr.data-x]=x [attr.data-y]=y />
+    </ng-container>
+  </ng-container>
+</div>
+<div class="undo">
+  <button class="favorite styled"
+          type="button" (click)="onUndo()">
+    Undo
+  </button>
+  <button class="favorite styled"
+          type="button" (click)="onRedo()">
+    Redo
+  </button>
+</div>
+<br><br>
+<div class="edit">
+  <button class="favorite styled"
+          type="button" (click)="onEditNamePlayer()">
+    Changer de Pseudo
+  </button>
+</div>
+<app-score></app-score>
+
+<div class="topscore">
+    <div>
+      <h1>{{this.gameService.game.player.name}}</h1>
+      <h2>{{this.gameService.game.map.name}}</h2>
+      <img class="topscoreimg" src="assets/ranking.svg" (click)="onTopScore()" />
+    </div>
+  </div>
+
+

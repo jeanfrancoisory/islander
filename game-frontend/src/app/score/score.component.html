@@ -1,0 +1,26 @@
+<h1>{{this.gameService.game.score}}/{{this.gameService.game.limite}}</h1>
+
+<div class="rectangle" style="width:500px;height:100px;border:1px solid #ffffff;">
+  <figure class='circus'>
+    <img src='assets/circus.svg' (click)="onCircus()"/>
+    <figcaption >{{gameService.game.circusAvailable}}</figcaption>
+  </figure>
+  <figure class='fountain'>
+    <img src='assets/fountain.svg' (click)="onFountain()"/>
+    <figcaption>{{gameService.game.fountainAvailable}}</figcaption>
+  </figure>
+  <figure class='house'>
+    <img src='assets/house.svg' (click)="onHouse()"/>
+    <figcaption>{{gameService.game.houseAvailable}}</figcaption>
+  </figure>
+  <figure class='wind'>
+    <img src='assets/wind-turbine.svg' (click)="onWindTurbine()"/>
+    <figcaption>{{gameService.game.windTurbineAvailable}}</figcaption>
+  </figure>
+
+</div>
+
+<button class="favorite styled"
+        type="button" (click)="onClickedEnd()">
+  Finir la partie
+</button>

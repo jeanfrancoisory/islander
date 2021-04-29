@@ -1,0 +1,6 @@
+<div class="center">
+  <h1>Top 5 : {{this.gameService.game.map.name}}</h1>
+  <ng-container *ngFor="let score of this.gameService.scoreList">
+    <h2>{{score.player.name}} : {{score.score}}</h2>
+  </ng-container>
+</div>
